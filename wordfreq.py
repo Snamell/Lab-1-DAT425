@@ -42,11 +42,10 @@ def countWords(words, stopWords):
     these_words={}
 
     for word in words:
-        if word not in stopWords:
-            if word in these_words:
-                these_words[word] += 1
-            else:
-                these_words[word] = 1
+        if word not in stopWords and word not in these_words:
+            these_words[word]=1
+        elif word not in stopWords and word in these_words:
+            these_words[word]+=1
         
     return these_words
 

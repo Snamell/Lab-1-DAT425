@@ -1,4 +1,5 @@
 def tokenize(lines):
+    
     words = []
 
     for line in lines:
@@ -17,7 +18,7 @@ def tokenize(lines):
                     print(line[start:end])
                     words.append(line[start:end].lower())
                     start=end
-                except IndexError:
+                except IndexError: #Without IndexError, if a string ends with a letter there will be an error. 
                     print(line[start:end])
                     words.append(line[start:end].lower())
                     return words
@@ -36,3 +37,34 @@ def tokenize(lines):
                 start=start+1
 
     return words
+
+def countWords(words, stopWords):
+    these_words={}
+
+    for word in words:
+        if word not in stopWords:
+            if word in these_words:
+                these_words[word] += 1
+            else:
+                these_words[word] = 1
+        
+    return these_words
+
+
+print(countWords(["hej","hej","hej", "hallå","a"],["a"]))
+
+
+def printTopMost(frequencies,n):
+    
+    top_most_words = []
+    top_word_count = []
+    
+    with open("articles/article1.txt") as files:
+        files = {}
+        for word,freq in files.items(): 
+            top_most_words.append([files])
+
+    return top_most_words
+
+
+print(printTopMost)

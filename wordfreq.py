@@ -56,14 +56,14 @@ print(countWords(["hej","hej","hej", "hallå","a"],["a"]))
 def printTopMost(frequencies,n):
     
     top_most_words = []
-    top_word_count = []
     
-    with open("articles/article1.txt") as files:
-        files = {}
-        for word,freq in files.items(): 
-            top_most_words.append([files])
-
-    return top_most_words
-
-
-print(printTopMost)
+    for word, freq in frequencies.items():
+        print(word, freq)
+        
+    
+    print(printTopMost(frequencies, n))
+ 
+  
+    # ta in frequencies (countWords dictionary) och printa de n-flesta ord ({sak: 10, vet: 4, fisk: 14, cool: 2}(frequencies), 3(n)): ger fisk 14, sak 10 , vet 4.
+     
+    # ljust = 20 och rjust 5 (lägger till mellanrum mellan ord, frequencies, och antal upprepningar, n.)
